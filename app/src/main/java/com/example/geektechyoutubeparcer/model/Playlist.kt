@@ -12,101 +12,101 @@ data class Playlist(
 
 data class High(
     @SerializedName("width")
-    val width: Int,
+    val width: Int? = null,
     @SerializedName("url")
-    val url: String,
+    val url: String? = null,
     @SerializedName("height")
-    val height: Int
+    val height: Int? = null
 )
 
 
 data class PageInfo(
     @SerializedName("totalResults")
-    val totalResults: Int,
+    val totalResults: Int? = null,
     @SerializedName("resultsPerPage")
-    val resultsPerPage: Int
+    val resultsPerPage: Int? = null
 )
 
 
 data class ContentDetails(
     @SerializedName("itemCount")
-    val itemCount: String
+    val itemCount: String? = null
 )
 
 
 data class Medium(
     @SerializedName("width")
-    val width: Int,
+    val width: Int? = null,
     @SerializedName("url")
-    val url: String,
+    val url: String? = null,
     @SerializedName("height")
-    val height: Int
+    val height: Int? = null
 )
 
 
 data class Maxres(
     @SerializedName("width")
-    val width: Int,
+    val width: Int? = null,
     @SerializedName("url")
-    val url: String,
+    val url: String? = null,
     @SerializedName("height")
-    val height: Int
+    val height: Int? = null
 )
 
 data class Standard(
     @SerializedName("width")
-    val width: Int,
+    val width: Int? = null,
     @SerializedName("url")
-    val url: String,
+    val url: String? = null,
     @SerializedName("height")
-    val height: Int
+    val height: Int? = null
 )
 
 data class Thumbnails(
     @SerializedName("standard")
-    val standard: Standard,
+    val standard: Standard? = null,
     @SerializedName("default")
-    val default: Default,
+    val default: Default? = null,
     @SerializedName("high")
-    val high: High,
+    val high: High? = null,
     @SerializedName("maxres")
-    val maxres: Maxres,
+    val maxres: Maxres? = null,
     @SerializedName("medium")
-    val medium: Medium
+    val medium: Medium? = null
 )
 
 data class PlaylistItem(
     @SerializedName("snippet")
-    val snippet: Snippet,
+    val snippet: Snippet? = null,
     @SerializedName("kind")
-    val kind: String,
+    val kind: String? = null,
     @SerializedName("etag")
-    val etag: String,
+    val etag: String? = null,
     @SerializedName("id")
-    val id: String,
+    val id: String? = null,
     @SerializedName("contentDetails")
-    val contentDetails: ContentDetails
+    val contentDetails: ContentDetails? = null
 )
 
 data class Snippet(
     @SerializedName("publishedAt")
-    val publishedAt: String,
+    val publishedAt: String? = null,
     @SerializedName("localized")
-    val localized: Localized,
+    val localized: Localized? = null,
     @SerializedName("description")
-    val description: String,
+    val description: String? = null,
     @SerializedName("title")
-    val title: String,
+    val title: String? = null,
     @SerializedName("thumbnails")
-    val thumbnails: Thumbnails,
+    val thumbnails: Thumbnails? = null,
     @SerializedName("channelId")
-    val channelId: String,
+    val channelId: String? = null,
     @SerializedName("channelTitle")
-    val channelTitle: String,
+    val channelTitle: String? = null,
     @SerializedName("resourceId")
-    val resourceId: ResourceId,
+    val resourceId: ResourceId? = null,
     @SerializedName("playlistId")
-    val playlistId: String
+    val playlistId: String? = null
 )
 
 data class Default(

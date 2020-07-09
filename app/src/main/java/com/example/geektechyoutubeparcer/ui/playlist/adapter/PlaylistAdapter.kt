@@ -34,9 +34,9 @@ class PlaylistAdapter(private val listener: Listener) : RecyclerView.Adapter<Pla
 
     class ViewHolder(itemView: View, var context: Context) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: PlaylistItem, listener: Listener) {
-            itemView.image.loadImage(context, item.snippet.thumbnails.high.url)
-            itemView.title.text = item.snippet.channelTitle
-            itemView.sub_title.text = item.contentDetails.itemCount + " videos in playlist"
+            itemView.image.loadImage(context, item.snippet?.thumbnails?.high?.url)
+            itemView.title.text = item.snippet?.channelTitle
+            itemView.sub_title.text = item.contentDetails?.itemCount + " videos in playlist"
             itemView.setOnClickListener { listener.onItemClick(item) }
         }
 

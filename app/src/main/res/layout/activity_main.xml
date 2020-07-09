@@ -31,7 +31,6 @@
                 android:background="@drawable/ic_info"
                 android:layout_gravity="right"/>
         </LinearLayout>
-
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
