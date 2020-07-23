@@ -23,6 +23,11 @@ interface YoutubeAPi {
         @Query("maxResults") maxResult: String
     ): Call<Playlist>
 
-
+    @GET("v3/videos")
+    fun getDetailVideo(
+        @Query("key") apiKey: String,
+        @Query("part") part: String,
+        @Query("id") id: String
+    ): Call<Playlist>
 
 }

@@ -1,5 +1,6 @@
 package com.example.geektechyoutubeparcer.ui.playlist
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,10 +13,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PlaylistViewModel : ViewModel() {
+class PlaylistViewModel(private val repository: PlaylistRepository) : ViewModel() {
 
     fun fetchPlaylist(): LiveData<Playlist?> {
-        return PlaylistRepository().fetchYoutubePlaylist()
+        return repository.fetchYoutubePlaylist()
     }
 
 }

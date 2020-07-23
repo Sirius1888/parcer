@@ -9,14 +9,14 @@ import com.example.geektechyoutubeparcer.model.PlaylistItem
 import com.example.geektechyoutubeparcer.ui.detail_playlist.DetailPlaylistActivity
 import com.example.geektechyoutubeparcer.ui.playlist.adapter.PlaylistAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.android.inject
 
 class PlaylistActivity : BaseActivity(R.layout.activity_main), PlaylistAdapter.Listener {
 
     private var adapter: PlaylistAdapter? = PlaylistAdapter(this)
-    private var viewModel: PlaylistViewModel? = null
+    private val viewModel by inject<PlaylistViewModel>()
 
     override fun setupUI() {
-        viewModel = ViewModelProviders.of(this).get(PlaylistViewModel::class.java)
         setupAdapter()
     }
 

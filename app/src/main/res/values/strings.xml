@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GeekTechYoutubeParcer</string>
     <string name="playlist">Playlist</string>
+    <string name="download_video">скачать видео</string>
+    <string name="detail_video">Видео детально</string>
+    <string name="download">Скачать</string>
 </resources>

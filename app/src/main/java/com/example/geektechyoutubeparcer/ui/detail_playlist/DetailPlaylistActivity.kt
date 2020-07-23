@@ -1,5 +1,6 @@
 package com.example.geektechyoutubeparcer.ui.detail_playlist
 
+import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -10,9 +11,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geektechyoutubeparcer.R
+import com.example.geektechyoutubeparcer.Shared
 import com.example.geektechyoutubeparcer.base.BaseActivity
 import com.example.geektechyoutubeparcer.extension.showToast
 import com.example.geektechyoutubeparcer.model.PlaylistItem
+import com.example.geektechyoutubeparcer.ui.detail_video.DetailVideoActivity
 import com.example.geektechyoutubeparcer.ui.playlist.PlaylistViewModel
 import com.example.geektechyoutubeparcer.ui.playlist.adapter.PlaylistAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,7 +31,7 @@ class DetailPlaylistActivity : BaseActivity(R.layout.activity_detail_playlist), 
     }
 
     override fun onItemClick(dto: PlaylistItem) {
-        // DetailVideoActivity.instance(this, dto.snippet?.resourceId?.videoId)
+         DetailVideoActivity.instance(this, dto.snippet?.resourceId?.videoId)
     }
 
     // сделать запрос на получение информации о видео, всё по дизаину.
