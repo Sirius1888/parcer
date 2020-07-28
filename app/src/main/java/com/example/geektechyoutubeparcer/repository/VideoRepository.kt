@@ -10,12 +10,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class VideoRepository {
+class VideoRepository(private var service: YoutubeAPi) {
 
-    private  var apiService: YoutubeAPi? = null
     fun fetchVideoById(videoId: String): MutableLiveData<Playlist> {
         val data = MutableLiveData<Playlist>()
-        apiService?.getDetailVideo(apiKey, part, videoId)?.enqueue(object :
+        service.getDetailVideo(apiKey, part, videoId).enqueue(object :
             Callback<Playlist> {
             override fun onFailure(call: Call<Playlist>, t: Throwable) {
                 data.value = null

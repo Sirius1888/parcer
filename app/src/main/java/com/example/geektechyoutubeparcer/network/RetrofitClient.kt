@@ -1,14 +1,12 @@
 package com.example.geektechyoutubeparcer.network
 
-import android.content.Context
-import com.example.geektechyoutubeparcer.Shared
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitClient(private var okHttpClient: OkHttpClient?, private var shared: Shared) {
+class RetrofitClient(private var okHttpClient: OkHttpClient?) {
 
     private val BASE_URL = "https://www.googleapis.com/youtube/"
     fun provideRetrofit(): Retrofit {

@@ -8,5 +8,5 @@ import org.koin.dsl.module
 var viewModelModule = module {
     factory { PlaylistViewModel(get()) }
     factory { DetailPlaylistViewModel(get()) }
-    factory { DetailVideoViewModel() }
+    factory { DetailVideoViewModel(get()) }
 }

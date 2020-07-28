@@ -50,4 +50,7 @@ dependencies {
 
     implementation "org.koin:koin-androidx-viewmodel:2.0.1"
     implementation "org.koin:koin-core:2.0.1"
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.8.4'
+    implementation 'com.github.haarigerharald:android-youtubeextractor:2.1.0'
 }

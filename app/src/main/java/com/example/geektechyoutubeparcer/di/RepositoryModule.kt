@@ -9,7 +9,7 @@ import org.koin.dsl.module
 var repositoryModule = module {
     factory { DetailPlaylistRepository(get()) }
     factory { PlaylistRepository(get()) }
-    factory { VideoRepository() }
+    factory { VideoRepository(get()) }
     // factory { }
     // single { }
 

@@ -6,9 +6,9 @@ import com.example.geektechyoutubeparcer.model.Playlist
 import com.example.geektechyoutubeparcer.repository.PlaylistRepository
 import com.example.geektechyoutubeparcer.repository.VideoRepository
 
-class DetailVideoViewModel : ViewModel() {
+class DetailVideoViewModel(private var repository: VideoRepository) : ViewModel() {
 
     fun fetchVideoById(relatedToVideoId: String): LiveData<Playlist?> {
-        return VideoRepository().fetchVideoById(relatedToVideoId)
+        return repository.fetchVideoById(relatedToVideoId)
     }
 }
