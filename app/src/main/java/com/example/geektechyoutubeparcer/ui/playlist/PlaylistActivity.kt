@@ -1,7 +1,6 @@
 package com.example.geektechyoutubeparcer.ui.playlist
 
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.base.BaseActivity

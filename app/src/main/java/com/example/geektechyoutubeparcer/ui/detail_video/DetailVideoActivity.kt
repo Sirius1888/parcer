@@ -10,6 +10,8 @@ import at.huber.youtubeExtractor.YouTubeExtractor
 import at.huber.youtubeExtractor.YtFile
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.base.BaseActivity
+import com.example.geektechyoutubeparcer.dialog.DownloadDialog
+import com.example.geektechyoutubeparcer.extension.showToast
 import com.example.geektechyoutubeparcer.model.Playlist
 import com.example.geektechyoutubeparcer.model.PlaylistItem
 import com.example.geektechyoutubeparcer.utils.CallBacks
@@ -19,7 +21,8 @@ import com.google.android.exoplayer2.Player
 import kotlinx.android.synthetic.main.activity_video.*
 import org.koin.android.ext.android.inject
 
-class DetailVideoActivity : BaseActivity(R.layout.activity_video), CallBacks {
+class DetailVideoActivity : BaseActivity(R.layout.activity_video), CallBacks,
+    DownloadDialog.Listener {
 
     private val viewModel by inject<DetailVideoViewModel>()
 
@@ -29,6 +32,7 @@ class DetailVideoActivity : BaseActivity(R.layout.activity_video), CallBacks {
     override fun setupUI() {
         setupExoPlayer()
         setupToolbar()
+        downloadAction()
     }
 
     private fun setupExoPlayer() {
@@ -39,6 +43,22 @@ class DetailVideoActivity : BaseActivity(R.layout.activity_video), CallBacks {
     private fun setupToolbar() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    private fun downloadAction() {
+        download.setOnClickListener {
+            DownloadDialog(this, this, listOfFormatVideo).show()
+        }
+    }
+
+    override fun downloadedItem(dto: YoutubeVideo?) {
+        if (!dto?.audioFile?.url.isNullOrEmpty()) downloadFile(dto?.audioFile?.url)
+        if (!dto?.videoFile?.url.isNullOrEmpty()) downloadFile(dto?.videoFile?.url)
+        showToast(dto.toString())
+    }
+    
+    private fun downloadFile(url: String?) {
+
     }
 
     override fun setupLiveData() {

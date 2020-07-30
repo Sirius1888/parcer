@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.base.BaseActivity
-import com.example.geektechyoutubeparcer.extension.showToast
 import com.example.geektechyoutubeparcer.model.PlaylistItem
 import com.example.geektechyoutubeparcer.ui.detail_video.DetailVideoActivity
 import com.example.geektechyoutubeparcer.ui.playlist.adapter.PlaylistAdapter
